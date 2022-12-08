@@ -26,7 +26,9 @@ schannel = "0.1.17"
 
 [target.'cfg(not(any(target_os = "windows", target_os = "macos", target_os = "ios")))'.dependencies]
 log = "0.4.5"
-boring = "2.1.0"
+boring = { git = "https://github.com/4JX/boring", rev = "2a7463a" }
+tokio-boring = { git = "https://github.com/4JX/boring", rev = "2a7463a" }
+boring-sys = { git = "https://github.com/4JX/boring", rev = "2a7463a" }
 openssl-probe = "0.1"
 
 [dev-dependencies]
