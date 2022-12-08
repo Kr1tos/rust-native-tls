@@ -1,16 +1,16 @@
-extern crate openssl;
+extern crate boring;
 extern crate openssl_probe;
 
-use self::openssl::error::ErrorStack;
-use self::openssl::hash::MessageDigest;
-use self::openssl::nid::Nid;
-use self::openssl::pkcs12::Pkcs12;
-use self::openssl::pkey::{PKey, Private};
-use self::openssl::ssl::{
+use self::boring::error::ErrorStack;
+use self::boring::hash::MessageDigest;
+use self::boring::nid::Nid;
+use self::boring::pkcs12::Pkcs12;
+use self::boring::pkey::{PKey, Private};
+use self::boring::ssl::{
     self, MidHandshakeSslStream, SslAcceptor, SslConnector, SslContextBuilder, SslMethod,
     SslVerifyMode,
 };
-use self::openssl::x509::{store::X509StoreBuilder, X509VerifyResult, X509};
+use self::boring::x509::{store::X509StoreBuilder, X509VerifyResult, X509};
 use std::error;
 use std::fmt;
 use std::io;
@@ -24,7 +24,7 @@ fn supported_protocols(
     max: Option<Protocol>,
     ctx: &mut SslContextBuilder,
 ) -> Result<(), ErrorStack> {
-    use self::openssl::ssl::SslVersion;
+    use self::boring::ssl::SslVersion;
 
     fn cvt(p: Protocol) -> SslVersion {
         match p {
@@ -48,7 +48,7 @@ fn supported_protocols(
     max: Option<Protocol>,
     ctx: &mut SslContextBuilder,
 ) -> Result<(), ErrorStack> {
-    use self::openssl::ssl::SslOptions;
+    use self::boring::ssl::SslOptions;
 
     let no_ssl_mask = SslOptions::NO_SSLV2
         | SslOptions::NO_SSLV3

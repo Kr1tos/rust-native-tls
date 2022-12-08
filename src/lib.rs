@@ -32,11 +32,6 @@
 //!     * Includes hostname verification for clients
 //! * Supports asynchronous I/O for both the server and the client
 //!
-//! # Cargo Features
-//!
-//! * `vendored` - If enabled, the crate will compile and statically link to a
-//!     vendored copy of OpenSSL. This feature has no effect on Windows and
-//!     macOS, where OpenSSL is not used.
 //!
 //! # Examples
 //!
